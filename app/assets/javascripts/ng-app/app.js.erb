@@ -6,7 +6,7 @@ angular
     'templates'
   ])
   /* Dependencies */
-  .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+  .config([$stateProvider, $urlRouterProvider, $locationProvider, function ($stateProvider, $urlRouterProvider, $locationProvider) {
     /* Routes and States */
     // TODO: Research difference between Routes and States
     $stateProvider
@@ -49,4 +49,4 @@ angular
     // TODO: Google what HTML5 mode does under-the-hood
     // TODO: Figure out how to get this to work
     // $locationProvider.html5Mode(true);
-  });
+  }]);
