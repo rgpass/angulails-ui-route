@@ -2,10 +2,16 @@
   "lib": {
     "name": "bower-rails generated lib assets",
     "dependencies": {
-      "angular": "latest",
+      "angular": "~1.2.0",
+      "angular-resource": "~1.2.0",
+      "angular-cookies": "~1.2.0",
+      "angular-sanitize": "~1.2.0",
+      "angular-animate": "~1.2.0",
       "angular-ui-router": "latest",
-      "angular-animate": "latest",
-      "bootstrap-sass-official": "latest"
+      "bootstrap-sass-official": "latest",
+      "angular-ui-router.stateHelper": "~1.1.0",
+      "angular-bootstrap": "0.11.0",
+      "ui-router-extras": "~0.0.10"
     }
   },
   "vendor": {
