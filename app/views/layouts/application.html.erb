@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RailsUiRouter</title>
+  <!-- These are removed because Turbolinks can interfere with client-heavy apps -->
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<!-- Added it here so that all views include Angular -->
+<body ng-app="myApp">
+
+<%= yield %>
+
+</body>
+</html>

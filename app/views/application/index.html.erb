@@ -1,0 +1,7 @@
+<!-- This way you don't have to have a partial and load it in via application.html.erb -->
+<!-- navbar.html is defined in templates/navbar.html.erb -->
+<div ng-include="'navbar.html'"></div>
+
+<!-- Adding this class enables us to set where animations occur -->
+<!-- ui-view is an attribute for UI Router so it knows where to put templates in -->
+<div class="main-view-container" ui-view></div>

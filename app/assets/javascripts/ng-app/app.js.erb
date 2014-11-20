@@ -1,0 +1,52 @@
+angular
+  /* Modules */
+  .module('myApp', [
+    'ngAnimate',
+    'ui.router',
+    'templates'
+  ])
+  /* Dependencies */
+  .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+    /* Routes and States */
+    // TODO: Research difference between Routes and States
+    $stateProvider
+      .state('home', {
+        url: '/',
+        // Angular Rails Templates refers to the templates folder as the default
+        // so if you had your file in /example_folder/index.html.erb, on this
+        // line you would put:
+        // templateUrl: 'example_folder/index.html'
+        // May need the asset_path for minification
+        // templateUrl: '<%= asset_path "home.html" %>',
+        templateUrl: 'home.html',
+        // With this line, you don't need to specify the ctrl inside the
+        // home.html page
+        controller: 'HomeCtrl'
+      })
+      // Dashboard is an abstract state, serving as a parent for child states
+      .state('dashboard', {
+        abstract: true,
+        url: '/dashboard',
+        templateUrl: 'dashboard/layout.html'
+      })
+        .state('dashboard.one', {
+          url: '',
+          templateUrl: 'dashboard/one.html'
+        })
+        .state('dashboard.two', {
+          url: '/two',
+          templateUrl: 'dashboard/two.html'
+        })
+        .state('dashboard.three', {
+          url: '/three',
+          templateUrl: 'dashboard/three.html'
+        });
+
+    // Default fall-back route
+    $urlRouterProvider.otherwise('/');
+
+    // Enable HTML5 mode for SEO
+    // TODO: Google what HTML5 mode does under-the-hood
+    // TODO: Figure out how to get this to work
+    // $locationProvider.html5Mode(true);
+  });
